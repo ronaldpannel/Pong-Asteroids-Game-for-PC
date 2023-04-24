@@ -13,6 +13,7 @@ const gameOverScreen = document.getElementById("gameOverScreen");
 const gameOverScreenScore = document.getElementById("score");
 const gameOverScreenHiSore = document.getElementById("hScore");
 const highScoreResetBtn = document.getElementById("hsResetBtn");
+const cloudAnimation = document.getElementById("cloud");
 canvas.width = 600;
 canvas.height = 800;
 const expSound1 = document.getElementById("explosion1");
@@ -183,8 +184,12 @@ window.addEventListener("keyup", (e) => {
   }
 });
 startGameBtn.addEventListener("click", () => {
-  startGame();
-  startScreen.classList.add("inactive");
+  cloudAnimation.classList.add("cloudActive");
+
+  setTimeout(() => {
+    startScreen.classList.add("inactive");
+    startGame();
+  }, 900);
 });
 highScoreResetBtn.addEventListener("click", () => {
   localStorage.setItem("paHighScore", 0);

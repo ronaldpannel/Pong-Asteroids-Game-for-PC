@@ -83,6 +83,24 @@ button:hover {
   border: 1px solid blueviolet;
   box-shadow:inset 3px 3px 2px black;
 }
+.cloud{
+  position: absolute;
+  top: 50%;
+  width: 210px;
+  height: 210px;
+  display: none;
+  border-radius: 50%;
+  background: transparent url('boom.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: cloud 1s steps(5) infinite;
+}
+@keyframes cloud {
+  100%{
+    background-position: -1000px, 0 ;
+  }
+}
 
 .asteroidImage {
   display: none;
@@ -98,4 +116,7 @@ button:hover {
 }
 .active{
   display: flex;
+}
+.cloudActive{
+  display: block;
 }
